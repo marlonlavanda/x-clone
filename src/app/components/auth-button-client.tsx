@@ -5,6 +5,7 @@ import {
   createClientComponentClient,
 } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/button";
 
 export function AuthButton({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient();
@@ -45,10 +46,10 @@ export function AuthButton({ session }: { session: Session | null }) {
               clipRule="evenodd"
             />
           </svg>
-          Sign In with Github
+          Iniciar sesión con Github
         </button>
       ) : (
-        <button onClick={handleSignOut}>Sign out</button>
+        <Button onClick={handleSignOut}>Cerrar sesión</Button>
       )}
     </header>
   );
